@@ -4,28 +4,10 @@
         <title>Dongle Blog</title>
         <link>https://sk1737030.github.io/blog</link>
         <description>Dongle Blog</description>
-        <lastBuildDate>Tue, 26 Apr 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
-        <item>
-            <title><![CDATA[first]]></title>
-            <link>https://sk1737030.github.io/blog/2022/04/26/first</link>
-            <guid>/2022/04/26/first</guid>
-            <pubDate>Tue, 26 Apr 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[--]]></description>
-            <content:encoded><![CDATA[<p>--
-slug: greetings
-title: Greetings!
-authors:</p><ul><li>name: Joel Marcey
-title: Co-creator of Docusaurus 1
-url: <a href="https://github.com/JoelMarcey" target="_blank" rel="noopener noreferrer">https://github.com/JoelMarcey</a>
-image_url: <a href="https://github.com/JoelMarcey.png" target="_blank" rel="noopener noreferrer">https://github.com/JoelMarcey.png</a></li><li>name: Sébastien Lorber
-title: Docusaurus maintainer
-url: <a href="https://sebastienlorber.com" target="_blank" rel="noopener noreferrer">https://sebastienlorber.com</a>
-image_url: <a href="https://github.com/slorber.png" target="_blank" rel="noopener noreferrer">https://github.com/slorber.png</a>
-tags: <!-- -->[greetings]</li></ul><hr><p>Congratulations, you have made your first post!</p><p>Feel free to play around and edit this post as much you like.</p>]]></content:encoded>
-        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://sk1737030.github.io/blog/welcome</link>

@@ -2,29 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sk1737030.github.io/blog</id>
     <title>Dongle Blog</title>
-    <updated>2022-04-26T00:00:00.000Z</updated>
+    <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sk1737030.github.io/blog"/>
     <subtitle>Dongle Blog</subtitle>
     <icon>https://sk1737030.github.io/img/favicon.ico</icon>
-    <entry>
-        <title type="html"><![CDATA[first]]></title>
-        <id>/2022/04/26/first</id>
-        <link href="https://sk1737030.github.io/blog/2022/04/26/first"/>
-        <updated>2022-04-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[--]]></summary>
-        <content type="html"><![CDATA[<p>--
-slug: greetings
-title: Greetings!
-authors:</p><ul><li>name: Joel Marcey
-title: Co-creator of Docusaurus 1
-url: <a href="https://github.com/JoelMarcey" target="_blank" rel="noopener noreferrer">https://github.com/JoelMarcey</a>
-image_url: <a href="https://github.com/JoelMarcey.png" target="_blank" rel="noopener noreferrer">https://github.com/JoelMarcey.png</a></li><li>name: Sébastien Lorber
-title: Docusaurus maintainer
-url: <a href="https://sebastienlorber.com" target="_blank" rel="noopener noreferrer">https://sebastienlorber.com</a>
-image_url: <a href="https://github.com/slorber.png" target="_blank" rel="noopener noreferrer">https://github.com/slorber.png</a>
-tags: <!-- -->[greetings]</li></ul><hr><p>Congratulations, you have made your first post!</p><p>Feel free to play around and edit this post as much you like.</p>]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
