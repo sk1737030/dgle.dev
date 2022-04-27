@@ -9,7 +9,7 @@ const config = {
   title: 'Dongle',
   tagline: 'Dinosaurs are cool',
   url: 'https://sk1737030.github.io',
-  baseUrl: '/',
+  baseUrl: '/til-blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
