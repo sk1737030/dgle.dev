@@ -438,8 +438,6 @@ Gateway에서 Request body를 읽어서 무언가를 처리 한 후에 다음 Fi
 
 ### 참고
 
-**[가상 면접 사례로 배우는 대규모 시스템 설계](http://www.yes24.com/Product/Goods/102819435)**
-
+[가상 면접 사례로 배우는 대규모 시스템 설계](http://www.yes24.com/Product/Goods/102819435)
 [Spring Cloud gateway Docs](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)
-
 [https://redis.io/docs/manual/programmability/eval-intro/](https://redis.io/docs/manual/programmability/eval-intro/)
