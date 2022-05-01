@@ -36,8 +36,8 @@
 <!-- -->이미 잘 만들어져서 책임을 다하는 객체가 있으면 잘 사용하는것도 중요하다라고 </p><h3 class="anchor anchorWithStickyNavbar_mojV" id="추가로-한-번-고민-해야-할-부분">추가로 한 번 고민 해야 할 부분<a class="hash-link" href="#추가로-한-번-고민-해야-할-부분" title="Direct link to heading">​</a></h3><p>Gateway에서 Request body를 읽어서 무언가를 처리 한 후에 다음 Filter로 넘겨 줄 때에는 고민을 해봐야하는데,<br>
 <!-- -->잘 알다시피 Servlet Request Body를 Filter에서 한 번 읽으면,<br>
 <!-- -->다시 뒤에서 body를 못 읽는다는 문제가 있다.<br>
-<!-- -->이 부분은 한 번 읽고 body를 캐싱 해서 다시 body를 넣어주는 추가 작업이 필요하다.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="참고">참고<a class="hash-link" href="#참고" title="Direct link to heading">​</a></h3><p><a href="http://www.yes24.com/Product/Goods/102819435" target="_blank" rel="noopener noreferrer">가상 면접 사례로 배우는 대규모 시스템 설계</a>
-<a href="https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/" target="_blank" rel="noopener noreferrer">Spring Cloud gateway Docs</a>
+<!-- -->이 부분은 한 번 읽고 body를 캐싱 해서 다시 body를 넣어주는 추가 작업이 필요하다.</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="참고">참고<a class="hash-link" href="#참고" title="Direct link to heading">​</a></h3><p><a href="http://www.yes24.com/Product/Goods/102819435" target="_blank" rel="noopener noreferrer">가상 면접 사례로 배우는 대규모 시스템 설계</a><br>
+<a href="https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/" target="_blank" rel="noopener noreferrer">Spring Cloud gateway Docs</a><br>
 <a href="https://redis.io/docs/manual/programmability/eval-intro/" target="_blank" rel="noopener noreferrer">https://redis.io/docs/manual/programmability/eval-intro/</a></p>]]></content>
         <author>
             <name>Dongle</name>
