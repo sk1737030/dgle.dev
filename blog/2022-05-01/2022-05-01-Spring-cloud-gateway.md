@@ -361,8 +361,9 @@ Request 요청시 위에 설정한 userAConfig에 맞게 응답값이 돌아오�
 
 ![Untitled](spring-cloud-gateway/Untitled%208.png)
 
-추가해도 좋을만한 옵션이 있는데, 만약 다양한 이유로 요청을 거절 하고 싶을 때  `deny-empty-key`라는 옵션이다.  
-key가 없을시 `FORBIDDEN` 응답으로 돌려주게된다.* 
+추가해도 좋을만한 옵션이 있는데, 만약 다양한 이유로 요청을 거절 하고 싶을 때 예를 들어 헤더에 약속된 값이 없거나 등
+그럴때 사용 할 수 있는 옵션이 `deny-empty-key`라는 옵션이다. (default true)이다.  
+이 옵션을 사용하기위해서 **____EMPTY_KEY__** 을 뒤로 넘겨 주게 되면 `FORBIDDEN` 응답으로 돌려주게된다.
 
 ```java title="UserKeyResolver.java"
 @Bean
@@ -374,6 +375,8 @@ public KeyResolver apiKeyResolve() {
     return Mono.just(exchange.getRequest().getQueryParams().getFirst("userId"));
 }
 ```
+
+<br/>
 
 ![Untitled](spring-cloud-gateway/Untitled%209.png)
 
