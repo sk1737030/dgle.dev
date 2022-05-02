@@ -1,5 +1,5 @@
 ---
-title: Container 환경에서의 GC
+title: Container 환경에서의 JVM GC
 description: 컨테이너 환경에서의 JVM GC는 어떻게 되는지 알아보자.
 slug: container-gc
 authors: dongle  
@@ -21,7 +21,7 @@ hide_table_of_contents: false
 
 ![아니 이게 뭔 개 소리야!](./2022-05-02/images/Untitled.png)
 
-<img src="./2022-05-02/images/Untitled.png" height="100px" width="300px" />
+<!-- <img src="./2022-05-02/images/Untitled.png" height="100px" width="300px" /> -->
 
 아니 이게 뭔 X 소리야!
 
