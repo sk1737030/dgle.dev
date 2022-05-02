@@ -7,7 +7,7 @@ tags: [SCG, Spring Cloud Gateway, Rate Limiter]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-[모든 소스](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway-late-limiter)는 요기서 확인가능합니다. :)  
+[모든 소스](https://github.com/sk1737030/til/tree/master/./2022-05-01/spring-cloud-gateway-late-limiter)는 요기서 확인가능합니다. :)  
 
 # Spring Cloud Gateway를 사용해서 API Limiter 구현을 해보자!
 ## Api Limitier가 필요한 이유?
@@ -31,7 +31,7 @@ redis document에서 찾을 수 있는데, 루아 스크립트가 실행 되는 
 그렇다면, 정말 조금만 더 더 욕심을 내서 요즘같이 대 MS시대에 여러 Applicaiton에 Route 역할도 하고 Gateway 역할도 하면서 거기에 더하여 Limiter까지 지원한다면 얼마나 좋을까? 
 근데 그런 팔방미인의 무-친 캐리머신이 있으니
 
-## [Spring Cloud Gateway](https://docs.spring.io/spring-cloud-gateway/docs/2.2.9.RELEASE/reference/html/)
+## [Spring Cloud Gateway](https://docs.spring.io/./2022-05-01/spring-cloud-gateway/docs/2.2.9.RELEASE/reference/html/)
 
 Spring Cloud Gateway를 정말 정-말 간단하게  소개하면 그냥 Gateway 역할을 한다.
 
@@ -127,29 +127,29 @@ spring:
 
 설정을 다 했으니 한 번 요청을 해보면
 
-![Untitled](spring-cloud-gateway/Untitled%201.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%201.png)
 
 설정한 burstCapacity 10 에서 -1 이된 9가 remain 으로 header에 응답이 오게 된다.  
 돌아오는 응답 헤더가 궁금하면 `RedisRateLimiter` 에 선언되어있는 Header에서 추가로 확인이 가능합니다.
 
-![Untitled](spring-cloud-gateway/Untitled%202.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%202.png)
 <br/>
 
 ### 그렇다면 레디스에 저장은 어떻게될까❓
 
 일단 레디스에 저장되는 데이터 셋을 본다면  
-![redis data](spring-cloud-gateway/Untitled%203.png)
+![redis data](./2022-05-01/spring-cloud-gateway/Untitled%203.png)
 
 왜 이렇게 저장되는지는 `RedisRateLimiter.java`에 `getKeys`라는 메소드에서 확인 할 수 있는데 
 
-![Untitled](spring-cloud-gateway/Untitled%204.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%204.png)
 <br/><br/><br/>
 
 이상으로 우리의 레디스를 활용한 ~~우아하고 깔끔한~~ **RateLimiter**가 완성 됐다!  
 <br/>
 
 
-![Untitled](spring-cloud-gateway/Untitled%205.png)   
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%205.png)   
 <br/><br/><br/>
 <br/><br/><br/>
 
@@ -349,17 +349,17 @@ spring:
 
 `Get localhost:18080/demo?userId=demo1234` 
 
-![Untitled](spring-cloud-gateway/Untitled%206.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%206.png)
 
 Request 요청시 위에 설정한 userAConfig에 맞게 응답값이 돌아오게된다.
 
 `Get localhost:18080/demo?userId=test` 
 
-![Untitled](spring-cloud-gateway/Untitled%207.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%207.png)
 
  `Remaining` 보다 요청을 더많이하게 되면 `429 Too Many Request` 가 응답으로 오게된다.
 
-![Untitled](spring-cloud-gateway/Untitled%208.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%208.png)
 
 추가해도 좋을만한 옵션이 있는데, 만약 다양한 이유로 요청을 거절 하고 싶을 때 예를 들어 헤더에 약속된 값이 없거나 등
 그럴때 사용 할 수 있는 옵션이 `deny-empty-key`라는 옵션이다. (default true)이다.  
@@ -378,7 +378,7 @@ public KeyResolver apiKeyResolve() {
 
 <br/>
 
-![Untitled](spring-cloud-gateway/Untitled%209.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%209.png)
 
 ### 정말 잘 작동 할까?
 
@@ -418,7 +418,7 @@ export default () => {
 
 ### 결과  
 
-![Untitled](spring-cloud-gateway/Untitled%2010.png)
+![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%2010.png)
 
 11번의 요청이 성공적으로 200으로 return 되었고, 6045번이 실패한 내역이다.
 
@@ -439,5 +439,5 @@ Gateway에서 Request body를 읽어서 무언가를 처리 한 후에 다음 Fi
 ### 참고
 
 [가상 면접 사례로 배우는 대규모 시스템 설계](http://www.yes24.com/Product/Goods/102819435)  
-[Spring Cloud gateway Docs](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)  
+[Spring Cloud gateway Docs](https://docs.spring.io/./2022-05-01/spring-cloud-gateway/docs/current/reference/html/)  
 [https://redis.io/docs/manual/programmability/eval-intro/](https://redis.io/docs/manual/programmability/eval-intro/)  
