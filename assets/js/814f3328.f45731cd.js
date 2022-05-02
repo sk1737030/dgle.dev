@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Container \ud658\uacbd\uc5d0\uc11c\uc758 JVM GC","permalink":"/container-gc"},{"title":"Request Rate Limiter\ub97c \ub9cc\ub4e4\uc5b4\ubcf4\uc790!","permalink":"/RateLimiter"}]}')}}]);
