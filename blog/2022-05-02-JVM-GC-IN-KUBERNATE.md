@@ -7,9 +7,6 @@ tags: [Kubernate, Container, JVM, Java]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-
-작성중에 있습니다.
-
 ## Jdk 11의 GC는 무조건 G1GC죠!
 
 당연히 우리의 어플리케이션의 GC는 당연히 G1GC를 쓰고 있겠지라고 한치의 의심없이 생각을 했었다. 아니 적어도 Jdk 11을 사용하면서 GC를 zgc vs g1gc를 뭘 써야 더 좋을까 이런 생각만 했었지 설마 **G1GC vs Serial Collector**를 고민을 하고 있을 줄이야! 꿈에서도 생각을 못했다. 결론부터 말하자면 Container 환경에서 Cpu와 메모리에 따라서 GC선택이 g1gc가 될 수도 있고 아닐 수도 있다.
