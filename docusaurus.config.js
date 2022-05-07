@@ -42,7 +42,7 @@ const config = {
         title: 'Dongle',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'https://avatars.githubusercontent.com/u/28296218?s=400&u=4e1e0c55274f6595e4f2e0a6148c7e209c9e7541&v=4',
         },
         items: [
           {
