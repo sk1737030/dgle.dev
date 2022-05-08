@@ -23,7 +23,9 @@
             <name>Dongle</name>
             <uri>https://github.com/sk1737030</uri>
         </author>
-        <category label="Java" term="Java"/>
+        <category label="SGC" term="SGC"/>
+        <category label="Spring Cloud Gateway" term="Spring Cloud Gateway"/>
+        <category label="Route" term="Route"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[까먹어서 다시 보는 Generic]]></title>
