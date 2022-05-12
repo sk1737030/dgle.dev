@@ -18,17 +18,17 @@ hide_table_of_contents: false
 ## Custom Redis limiter
 앞에서 사용했던 Default Redis Limiter는 아래 요구사항을 구현하기가 힘든데
 
-1. 특정 유저의 주식 조회 요청을 분당 1번으로 설정을하고 주식 주문을 초당 1번만 가능하다던지 
+1. 특정 사용자의 주식 조회 요청을 분당 1번으로 설정을 하고 주식 주문을 초당 1번만 가능하다던지 
 2. 속도 문제로 복잡하고 리소스가 많이 드는 요청일 경우 분당 1번만 요청하게 한다던지 
-3. 지금 redis에는 timestamp와 tokenKey 2개만 들어가있는데 다른 추가적인 정보도 넣고 싶다던지
-4. Redis TTL를 더 길게 잡는다던지
-5. User 별로 요청량을 다르게 하고 싶다던지 
+3. 지금 redis에는 timestamp와 tokenKey 2개만 들어가 있는데 다른 추가적인 정보도 넣고 싶다든지
+4. Redis TTL를 더 길게 잡는다든지
+5. User 별로 요청량을 다르게 하고 싶다든지
    
-이러한 요구사항들을 들어주는 Api Limiter를 심플하면서 간단하게(~~평범하면서도 우아하게라고 우리네 클라이언트가 실제로 들은 말~~) 구현을 한 번 해보자. 
+이러한 요구사항들을 들어주는 API Limiter를 단순하면서 간단하게(~~평범하면서도 우아하라고 우리네 클라이언트가 실제로 들은 말~~) 구현을 한 번 해보자. 
 
 ### Custom
 
-우선적으로 우리는 잘 구현되어있는`RedisRateLimiter`를 상속받아서 사용한다.
+먼저 우리는 잘 구현되어있는`RedisRateLimiter`를 상속받아서 사용한다.
 
 ```java title="CustomRedisRateLimiter.java"
 @Configuration
@@ -38,8 +38,8 @@ public class CustomRedisRateLimiter extends RedisRateLimiter {
 }
 ```
 
-만약 **User** 별로 요청량을 다르게 한다면 우리는 수정해야 할 메소드가 크게 두 개가 있는데  
-먼저 **isAllowed**, **loadConfiguration** 이 두개의 메소드를 수정해야 한다.
+만약 **User** 별로 요청량을 다르게 한다면 우리는 수정해야 할 메서드가 크게 두 개가 있는데  
+먼저 **isAllowed**, **loadConfiguration** 이 두 개의 메서드를 수정해야 한다.
 
 ```java title="CustomRedisRateLimiter.java"
 @Configuration
@@ -99,7 +99,7 @@ public class CustomRedisRateLimiter extends RedisRateLimiter {
 }
 ```
 
-우리가 앞에서 `UserKeyResolver`에서 설정한 `key`가 들어 오게되는데,  이 키를 가지고 제한하고자하는 요청량을 먼저 Config를 주입하면 끝이다.
+우리가 앞에서 `UserKeyResolver`에서 설정한 `key`가 들어오게 되는데, 이 키를 가지고 제한하고자 하는 요청량을 먼저 Config를 주입하면 끝이다.
 
 
 ```java title="CustomRedisRateLimiter.java"
@@ -202,19 +202,19 @@ spring:
 
 ![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%206.png)
 
-Request 요청시 위에 설정한 userAConfig에 맞게 응답값이 돌아오게된다.
+Request 요청 시 위에 설정한 userAConfig에 맞게 응답 값이 돌아오게 된다.
 
 `Get localhost:18080/demo?userId=test` 
 
 ![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%207.png)
 
- `Remaining` 보다 요청을 더많이하게 되면 `429 Too Many Request` 가 응답으로 오게된다.
+ `Remaining` 보다 요청을 더 많이 하게 되면 `429 Too Many Request` 가 응답으로 오게 된다.
 
 ![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%208.png)
 
-추가해도 좋을만한 옵션이 있는데, 만약 다양한 이유로 요청을 거절 하고 싶을 때 예를 들어 헤더에 약속된 값이 없거나 등
-그럴때 사용 할 수 있는 옵션이 `deny-empty-key`라는 옵션이다. (default true)이다.  
-이 옵션을 사용하기위해서 **____EMPTY_KEY__** 을 뒤로 넘겨 주게 되면 `FORBIDDEN` 응답으로 돌려주게된다.
+추가해도 좋을만한 옵션이 있는데, 만약 다양한 이유로 요청을 거절하고 싶을 때 예를 들어 헤더에 약속된 값이 없거나 등
+그럴 때 사용할 수 있는 옵션이 `deny-empty-key`라는 옵션이다. (default true)이다.  
+이 옵션을 사용하기 위해서 **____EMPTY_KEY__** 을 뒤로 넘겨주게 되면 `FORBIDDEN` 응답으로 돌려주게 된다.
 
 ```java title="UserKeyResolver.java"
 @Bean
@@ -231,9 +231,9 @@ public KeyResolver apiKeyResolve() {
 
 ![Untitled](./2022-05-01/spring-cloud-gateway/Untitled%209.png)
 
-### 정말 잘 작동 할까?
+### 정말 잘 작동할까?
 
-이 부분을 확인하기 위해서 짧은시간에 많은 부하테스트를 해 볼 것이다. 간단하게 [k6](https://k6.io/) 부하테스트 도구를 이용해서  테스트를 해 볼 겁니다. 
+이 부분을 확인하기 위해서 짧은 시간에 많은 부하 테스트를 해 볼 것이다. 간단하게 [k6](https://k6.io/) 부하 테스트 도구를 이용해서  테스트를 해 볼 겁니다. 
 
 조건 초당 1회 요청을 가능한지를 테스트한다면
 
@@ -265,7 +265,7 @@ export default () => {
 ```
 
 정말 간단한 스크립트로 보면 알겠지만  
-10초동안 get요청을 한다는 스크립트이고, 결과로 200일 경우 성공으로 보겠다는 것이다.
+10초 동안 get요청을 한다는 스크립트이고, 결과로 200일 경우 성공으로 보겠다는 것이다.
 
 ### 결과  
 
@@ -275,12 +275,12 @@ export default () => {
 
 ## 이상으로
 
-이렇게 간단하게 `RateLimiter`를 구현을 해보았는데, 처음에는 구현을 어떻게 하지라며 고민을 하면서,  
-Redis를 끄적끄적이며 구현중에 (~~Watch와 Multi와 함께라면),~~  
-구글신에 검색중에 Spring 진영에 잘 구현이 되어 있어서 쉽게 가져와서 요구사항에 맞게 사용을 했었다.  
-이미 잘 만들어져서 책임을 다하는 객체가 있으면 잘 사용하는것도 중요하다라고 
+이렇게 간단하게 `RateLimiter`를 구현을 해보았는떼, 처음에는 구현을 어떻게 하지라며 고민을 하였는데,  
+Redis를 끄적끄적이며 구현 중에 (~~Watch와 Multi와 함께라면),~~  
+Spring 진영에 잘 구현이 되어 있어서 쉽게 가져와서 요구사항에 맞게 사용을 했었다.  
+이미 잘 만들어져서 역할을 잘하고 있으면 빠르게 잘 사용하는 게 어려운 거구나 다시금 느꼈다.
 
-### 추가로 한 번 고민 해야 할 부분
+### 추가로 한 번 고민해야 할 부분
 
 Gateway에서 Request body를 읽어서 무언가를 처리 한 후에 다음 Filter로 넘겨 줄 때에는 고민을 해봐야하는데,  
 잘 알다시피 Servlet Request Body를 Filter에서 한 번 읽으면,  

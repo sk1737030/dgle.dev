@@ -7,14 +7,14 @@ tags: [SGC, Spring Cloud Gateway, Route]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-모든 소스는 [이곳](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway) 에서 확인 가능합니다.
+모든 소스는 [이곳](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway)에서 확인 가능합니다.
 
 Spring Gateway Route 설정 맛보기
 <!--truncate-->
 
 
 ## Spring Gateway Route
-Spring gateway을 사용 할 때 일반적으로 2가지 방식으로 route 설정을 할 수 있다.
+Spring gateway을 사용할 때 일반적으로 2가지 방식으로 route 설정을 할 수 있다.
 
 ### Yaml
 
@@ -80,7 +80,7 @@ public class RouteConfig {
 }
 ```
 
-라우트들을 나눠서 설정 할 수 있다. 그렇다면 따로 설정한 라우터들이 어떻게 같이 합쳐져서 작동하는 것 일까?
+라우트들을 나눠서 설정할 수 있다. 그렇다면 따로 설정한 라우터들이 어떻게 같이 합쳐져서 작동하는 것 일까?
 
 Route 구성도  
 ![[https://zhuanlan.zhihu.com/p/359523303](https://zhuanlan.zhihu.com/p/359523303)](2022-05-08/Untitled.png)  
@@ -107,7 +107,7 @@ public interface RouteDefinitionLocator {
 Service Discovery(Netflix Eureka, Consul, or Zookeeper)와 연동하여 등록된 서비스들을 기준으로 경로를 만든다.
 
 ### PropertiesRouteDefinitionLocator  
-Yaml에 설정한 property value 들이 **GateWayProperty** 직렬화되어 값이 들어가고  
+Yaml에 설정한 property value들이 **GateWayProperty** 직렬화되어 값이 들어가고  
 
 ```java
 public class PropertiesRouteDefinitionLocator implements RouteDefinitionLocator {
@@ -128,7 +128,7 @@ public class PropertiesRouteDefinitionLocator implements RouteDefinitionLocator 
 
 ![Untitled](2022-05-08/Untitled%201.png)
 
-GatewayProperty 값은 **PropertiesRouteDefinitionLocator 에 쓰여지게 된다.**  
+GatewayProperty 값은 **PropertiesRouteDefinitionLocator 에 쓰이게 된다.**  
 
 ![Untitled](2022-05-08/Untitled%202.png)
 
@@ -221,7 +221,7 @@ public class RouteDefinitionRouteLocator implements RouteLocator {
 
 ### CompositeRouteLocator
 
-여러 개의 `RouteLocator` 들은 delegates를 가지고, 각 RouteLocator 들이 가지고 있는 Route들을 하나로 합친다.
+여러 개의 `RouteLocator` 들은 delegates를 가지고, 각 RouteLocator들이 가지고 있는 Route들을 하나로 합친다.
 
 ```java
 public class CompositeRouteLocator implements RouteLocator {
@@ -244,7 +244,7 @@ this.deligates 안에 설정한 route들이 담겨있는 것을 볼 수 있다.
 
 ### CachingRouteLocator
 
-deletgate들을 받아 캐쉬에 저장해서 route들을 가진다.
+deletgate들을 받아 캐시에 저장해서 route들을 가진다.
 
 ```java
 public class CachingRouteLocator implements Ordered, RouteLocator, ApplicationListener<RefreshRoutesEvent>, ApplicationEventPublisherAware {
@@ -271,7 +271,7 @@ Cache에 Route들이 담기게 된다.
 
 ### 그리고 마지막으로 최초 시작점인 GatewayAutoConfiguration
 
-Gateway의 Route등 각종 config들을 설정한다.
+Gateway의 Route 등 각종 config들을 설정한다.
 
 ```java
 @Configuration(proxyBeanMethods = false)
@@ -300,10 +300,10 @@ public class GatewayAutoConfiguration {
 
 ![Untitled](2022-05-08/Untitled%206.png)
 
-개인적으로는 yaml으로 설정하기보다는 Java Config로 설정하는 게 좋다고 봅니다. Yaml 설정으로는 확실히 편한 반면에, IDE의 도움을 받기 힘들고, 오타, yaml 라인이 다른경우나 yaml 문법 에러 발생 등 정말 누구나 할 수 있는 실수인데, 만약 인지를 못하고 Product로 배포가되면 장애가 발생합니다. 또한 게이트웨이다보니 게이트웨이 뒤로 흐르는 모든 application들이 흐를 수 없게 되어 치명적인 장애가 발생 할 수 있으니 Production 환경에서는 Java Config로 설정을 하는 걸 추천드립니다.
+개인적으로는 yaml으로 설정하기보다는 Java Config로 설정하는 게 좋다고 봅니다. Yaml 설정으로는 확실히 편한 반면에, IDE의 도움을 받기 힘들고, 오타, yaml 라인이 다른 경우나 yaml 문법 에러 발생 등 정말 누구나 할 수 있는 실수인데, 만약 인지를 못하고 Product로 배포가 되면 장애가 발생합니다. 또한 게이트웨이다보 니 게이트웨이 뒤로 흐르는 모든 application들이 흐를 수 없게 되어 치명적인 장애가 발생할 수 있으니 Production 환경에서는 Java Config로 설정을 하는 걸 추천드립니다.
 
 ### 후기  
-요즘 내부 구현을 많이 까보면서, 내가 필요한 부분들을 따로 빼서 커스텀 해서 쓰는 일이 몇 번 하다보니, 지금도 마찬가지지만 예전에는 진짜 막 썻었구나라는걸 다시금 많이 느끼고 그러면서 요즘  스프링과 1cm정도 거리가 가까워졌다는 걸 느끼면서 ~~물론 그러면서 머리가 빠진...~~ 개인적으로 **성장**하고 있는 걸 느끼고 있다.
+요즘 내부 구현을 많이 까 보면서, 내가 필요한 부분들을 따로 빼서 커스텀해서 쓰는 일이 몇 번 하다보니, 지금도 마찬가지지만 예전에는 진짜 막 썼었구나라고 다시금 많이 느끼고 그러면서 요즘  스프링과 1cm 정도 거리가 가까워졌다는 걸 느끼면서 ~~물론 그러면서 머리가 빠진...~~ 개인적으로 **성장**하고 있는 걸 많이 느끼고 있다.
 
 참고  
 [https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)  

@@ -9,20 +9,20 @@ hide_table_of_contents: false
 ---
 ## Jdk 11의 GC는 무조건 G1GC죠!
 
-당연히 우리의 어플리케이션의 GC는 당연히 G1GC를 쓰고 있겠지라고 한치의 의심없이 생각을 했었다. 아니 적어도 Jdk 11을 사용하면서 GC를 zgc vs g1gc를 뭘 써야 더 좋을까 이런 생각만 했었지 설마 **G1GC vs Serial Collector**를 고민을 하고 있을 줄이야! 꿈에서도 생각을 못했다. 결론부터 말하자면 Container 환경에서 Cpu와 메모리에 따라서 GC선택이 g1gc가 될 수도 있고 아닐 수도 있다.
+당연히 우리의 애플리케이션 GC는 당연히 G1GC를 쓰고 있겠지라고 한치의 의심 없이 생각을 했었다. 아니 적어도 Jdk 11을 사용하면서 GC를 zgc vs g1gc를 뭘 써야 더 좋을까 이런 생각만 했었지 설마 **G1GC vs Serial Collector**를 고민을 하고 있을 줄이야! 꿈에서도 생각을 못했다. 결론부터 말하자면 Container 환경에서 Cpu와 메모리에 따라서 GC선택이 g1gc가 될 수도 있고 아닐 수도 있다.
 
 <!--truncate-->
 
 ### 발단
 
-일단 우리는 흔하디 흔한 `Kubernate`의 멋있는 오케스트라를 연주를 하며 `Container`환경에서 app을 배포하고 관리하고있다. 어느날 Slack에 크루 중 누군가가 우리 당연히 g1gc쓰고 있죠? 라고 올라와서 나는 엥? 당연한거 아닌가라고 생각을 하고 다른 일을 했는데 다른 크루가 우리 **Serial Collector** 인거 같은데요??? 라고 답장을 달았다.  
+일단 우리는 흔하디 흔한 `Kubernate`의 멋있는 오케스트라를 연주를 하며 `Container`환경에서 app을 배포하고 관리하고 있다. 어느날 Slack에 크루 중 누군가가 우리 당연히 g1gc 쓰고 있죠? 라고 올라와서 나는 엥? 당연한 거 아닌가라고 생각을 하고 다른 일을 했는데 다른 크루가 우리 **Serial Collector** 인 거 같은데요??? 라고 답장을 달았다.  
 
 ![아니 이게 뭔 개 소리야!](2022-05-02/Untitled.png)  
 
 
 ### 정말일까?
 
-나는 우리 jdk11버전 쓰는데? 그럴리가 있어? 에이 잘못 봤겠지라고 생각을 하고 좋아 내 눈으로 확인을 해봐야지라며 container에  들어가서 확인을 해 봤는데
+나는 우리 jdk11 버전 쓰는데? 그럴 리가 있어? 에이 잘못 봤겠지라고 생각을 하고 좋아 내 눈으로 확인을 해봐야지라며 container에  들어가서 확인을 해 봤는데
 
 ```bash
 > java -XX:+PrintCommandLineFlags -version
@@ -39,23 +39,23 @@ OpenJDK Runtime Environment (build 11.0.13+8-post-Debian-1deb11u1)
 OpenJDK 64-Bit Server VM (build 11.0.13+8-post-Debian-1deb11u1, mixed mode)
 ```
 
-일단 다른 Java_Tool Option이 있었지만 다 생략하고 먼저 OpenJdk 사용 중이고 Version은 11.0.13을 사용하는 걸 확인 하고, 옵션을 봤는데 `-XX:+UseSerialGC`  (~~아니 형이 왜 요기서 나와~~)  
+일단 다른 Java_Tool Option이 있었지만 다 생략하고 먼저 OpenJdk 사용 중이고 Version은 11.0.13을 사용하는 걸 확인하고, 옵션을 봤는데 `-XX:+UseSerialGC`  (~~아니 형이 왜 요기서 나와~~)  
 
 ### 의심
 
-너무 놀라서, 지금 생각해보면 말도안되는 여러 의심들을 했는데 
+너무 놀라서, 지금 생각해보면 말도 안 되는 여러 의심들을 했는데 
 
 1. 저 JDK 버전이 문제가 있어서 무조건 SerialGC를 주입 할 것이다.
-    - 라고 생각을 했지만, 사실 말도 안된다 무슨 동네 OpenJdk도 아니고 이 생각은 금방 넘어갔다
+    - 라고 생각을 했지만, 사실 말도 안 된다 무슨 동네 OpenJdk도 아니고 이 생각은 금방 넘어갔다
 2. 누군가가 주입을 했을 것이다.
-    - 누군가가 build를 할 때 주입을 해놨을 거라고 생각을 하고 build부분을 유심히 봤지만 SerialGC의 S도 찾아 볼 수 없었다.
-3. 저 옵션이 보여주는건 가짜야!
+    - 누군가가 build를 할 때 주입을 해놨을 거라고 생각을 하고 build부분을 유심히 봤지만 SerialGC의 S도 찾아볼 수 없었다.
+3. 저 옵션이 보여주는 건 가짜야!
 
-등등 진짜 말도안되는 의심들을 하기 시작했다.
+등등 진짜 말도 안 되는 의심들을 하기 시작했다.
 
 ### 침착
 
-사실 위에 저런 의심말고도 여러 가정과 수 많은 의심들을 했었다. 그러다가 현실을 받아들이고 왜 SerialGC를 사용 하게 되었을까라고 생각을 했다. 사실 난 나보다 Kube환경에서의 Container가 자동으로 **저렇게 설정한 이유가 있겠지라고** 더 믿기 때문에 오랜만에 SeraliGC와 G1GC를 다시 확인 해 보기로 했다.
+사실 위에 저런 의심 말고도 여러 가정과 수많은 의심들을 했었다. 그러다가 현실을 받아들이고 왜 SerialGC를 사용하게 되었을까라고 생각을 했다. 사실 난 나보다 Kube환경에서의 Container가 자동으로 **저렇게 설정한 이유가 있겠지라고** 더 믿기 때문에 오랜만에 SeraliGC와 G1GC를 다시 확인해 보기로 했다.
 
 ### Serail Collector
 
@@ -63,15 +63,15 @@ The serial collector uses a single thread to perform all garbage collection work
 
 It's best-suited to single processor machines because it can't take advantage of multiprocessor hardware, although it can be useful on multiprocessors for applications with small data sets (up to approximately 100 MB). The serial collector is selected by default on certain hardware and operating system configurations, or can be explicitly enabled with the option `-XX:+UseSerialGC`.
 
-가장 중요한 핵심은 **Single processor** 일 때 Best Suite이다. 물론 작은 메모리 데이터셋(up to approximately 100 MB)을 사용하는 어플리케이션에서는 멀티 프로세서일 경우 쓸만하긴하나 별로 사용을 안한다.
+가장 중요한 핵심은 **Single processor** 일 때 Best Suite이다. 물론 작은 메모리 데이터셋(up to approximately 100 MB)을 사용하는 애플리케이션에서는 멀티 프로세서일 경우 쓸만하긴 하나 별로 사용을 안 한다.
 
 ### G1GC
 
 java 9 부터 채택한 default GC이다. 
 
 The Garbage-First (G1) garbage collector is targeted for **multiprocessor machines** **with a large amount of memory**. It attempts to meet garbage collection pause-time goals with high probability while achieving high throughput with little need for configuration. G1 aims to provide the best balance between latency and throughput using current target applications and environments whose features include:
-
-가장 중요한 핵심은 Gabage First GC은 높은 메모리 량과 다중 프로세서을 타겟으로 삼고, 빠른 처리를 지원하여 STW를 줄인다는 것이다.
+ㄹ말도
+가장 중요한 핵심은 Gabage First GC은 높은 메모리 량과 다중 프로세서를 타깃으로 삼고, 빠른 처리를 지원하여 STW를 줄인다는 것이다.
 
 ### 원인
 
@@ -81,7 +81,7 @@ The Garbage-First (G1) garbage collector is targeted for **multiprocessor machin
 For Java 11+ it's also useful to know which GC is being used, and you can display this information via -Xlog:gc=info. For example, when container limits allow only a single CPU to be active, the Serial GC will be selected. `If more than one CPU is active and sufficient memory (at least 2GB) is allocated to the container, the G1 GC will be selected in Java 11 and later versions:`
 :::note
 
-Container환경에서는 CPU Core를 2개이상 사용하면서 Memory가 2G이상이여야 G1GC가 채택된다는 것이다.
+Container환경에서는 CPU Core를 2개 이상 사용하면서 Memory가 2G 이상이여야 G1GC가 채택된다는 것이다.
 
 [아마도  코드에서는 이런 느낌이지 않을까](https://developers.redhat.com/articles/2022/04/19/best-practices-java-single-core-containers#the_jvm_as_a_dynamic_execution_platform)
 
@@ -108,7 +108,7 @@ void GCConfig::select_gc_ergonomically() {
 
 ### 변경
 
-원인은 일단 알았으니까 기존에 따로 지정을 안했던CPU processor를 늘리고 메모리도 증가를 시킨 결과  
+원인은 일단 알았으니까 기존에 따로 지정을 안 했던 CPU processor를 늘리고 메모리도 증가를 시킨 결과  
 
 ```bash
 / # java -XX:+PrintCommandLineFlags -version
@@ -122,9 +122,9 @@ openjdk version "11.0.13" 2021-10-19
 OpenJDK 64-Bit Server VM (build 11.0.13+8-post-Debian-1deb11u1, mixed mode)
 ```
 
-그 후 몇일 간격으로 모니터링을 해본 결과 
+그 후 며칠 간격으로 모니터링을 해본 결과 
 
-기존 SerialGC 사용 할 때에는 GC가 일어날 때 전반적으로 pause time이 길었습니다. 100ms 
+기존 SerialGC 사용할 때에는 GC가 일어날 때 전반적으로 pause time이 길었습니다. 100ms 
 
 ![Untitled](2022-05-02/Untitled%201.png)  
 
