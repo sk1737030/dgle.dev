@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'sk1737030', // Usually your GitHub org/user name.
-  projectName: 'til-blog', // Usually your repo name.
+  projectName: 'Dongle Til Blog For Me ', // Usually your repo name.
 
   presets: [
     [
@@ -26,6 +26,7 @@ const config = {
           showReadingTime: true,
           routeBasePath: '/',
            editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         } ,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
