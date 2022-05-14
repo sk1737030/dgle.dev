@@ -18,9 +18,8 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: false,
         blog: {
           showReadingTime: true,
@@ -30,8 +29,12 @@ const config = {
         } ,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        }
-      }),
+        },
+        googleAnalytics: {
+          trackingID: 'G-BESW8T9G3W',
+          anonymizeIP: true, // Should IPs be anonymized?
+        },
+      },
     ],
   ],
 
