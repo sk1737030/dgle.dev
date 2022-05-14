@@ -46,6 +46,11 @@ const config = {
         },
         items: [
           {
+            href: 'https://bit.ly/3sWvIA4',
+            label: 'TIL',
+            position: 'left',
+          },
+          {
             href: 'https://github.com/sk1737030',
             label: 'GitHub',
             position: 'right',
