@@ -30,11 +30,7 @@ const config = {
         } ,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
-        googleAnalytics: {
-          trackingID: 'G-BESW8T9G3W',
-          anonymizeIP: true, // Should IPs be anonymized?
-        },
+        }
       }),
     ],
   ],
