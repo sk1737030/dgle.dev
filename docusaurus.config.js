@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Dongle',
   tagline: 'Til Blog For me!',
-  url: 'https://sk1737030.github.io',
+  url: 'https://dgle.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
