@@ -15,7 +15,16 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'sk1737030', // Usually your GitHub org/user name.
   projectName: 'Dongle Til Blog For Me ', // Usually your repo name.
-
+  scripts: [
+    {
+      src: "https://www.googletagmanager.com/gtag/js?id=G-BESW8T9G3W",
+      async: true,
+    },
+    {
+      src: "/js/googleAnalytics.js",
+      async: true,
+    },
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
