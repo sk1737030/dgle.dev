@@ -60,9 +60,6 @@ const config = {
           },
         ],
       },
-      googleAnalytics: {
-        trackingID: 'G-BESW8T9G3W',
-      },
       footer: {
         style: 'dark',
         copyright: `Copyright © ${new Date().getFullYear()} dongle, Inc. Built with Docusaurus.`,
