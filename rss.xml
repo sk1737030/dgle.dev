@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Dongle Blog</title>
-        <link>https://sk1737030.github.io/</link>
+        <link>https://dgle.dev/</link>
         <description>Dongle Blog</description>
         <lastBuildDate>Sun, 08 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[Spring Cloud Gateway Route 설정해보기]]></title>
-            <link>https://sk1737030.github.io/gateway</link>
+            <link>https://dgle.dev/gateway</link>
             <guid>gateway</guid>
             <pubDate>Sun, 08 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[스프링 게이트웨이 Route 까보기]]></description>
@@ -26,7 +26,7 @@
         </item>
         <item>
             <title><![CDATA[까먹어서 다시 보는 Generic]]></title>
-            <link>https://sk1737030.github.io/generic</link>
+            <link>https://dgle.dev/generic</link>
             <guid>generic</guid>
             <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[까먹어서 다시 찾아보는 제네릭]]></description>
@@ -42,7 +42,7 @@
         </item>
         <item>
             <title><![CDATA[Container 환경에서의 JVM GC]]></title>
-            <link>https://sk1737030.github.io/container-gc</link>
+            <link>https://dgle.dev/container-gc</link>
             <guid>container-gc</guid>
             <pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[컨테이너 환경에서의 JVM GC는 무엇이 선택될까?]]></description>
@@ -61,7 +61,7 @@
         </item>
         <item>
             <title><![CDATA[Request Rate Limiter를 만들어보자! 2편]]></title>
-            <link>https://sk1737030.github.io/RateLimiter2</link>
+            <link>https://dgle.dev/RateLimiter2</link>
             <guid>RateLimiter2</guid>
             <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Make Custom Rate Limiter With Spring Cloud Gateway 2]]></description>
@@ -87,7 +87,7 @@
         </item>
         <item>
             <title><![CDATA[Request Rate Limiter를 만들어보자! 1편]]></title>
-            <link>https://sk1737030.github.io/RateLimiter1</link>
+            <link>https://dgle.dev/RateLimiter1</link>
             <guid>RateLimiter1</guid>
             <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Make Custom Rate Limiter With Spring Cloud Gateway 1]]></description>
