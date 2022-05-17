@@ -79,12 +79,15 @@ default void onPartitionsRevokedBeforeCommit(Consumer<?, ?> consumer, Collection
 `onPartitionsAssigned` 은 파티션 재할당이 성공적으로 완료될 때 호출된다.  
 `onPartitionsRevoked` 은 할당되어 있던 파티션이 제거 될 때 호출된다.  
 `onPartitionsLost` 은  일반적인 상황에서는 실행이 안되나 만약 컨슈머의 세션 제한 시간이 만료되었거나 컨슈머가 더 이상 그룹에 속하지 않음을 나타내는 치명적인 오류가 수신된 경우 호출된다.  
+<br/>
 
 :::noteReBalancing순서
 참고로 일반적인 파티션이 할당되고 잘 실행되고 있는 런타임 환경에서는 당연한 말이 겠지만 `PartitionsRevoke`가 실행된 후 `PartitionsAssigned`가 실행된다. 반면 애플리케이션이 실행 될 때에는 `PartitionsAssigned`만 실행된다.
 :::note
 
-그래서 쉽게 Spring Kaka에서 잘 감싸서 준 `ConsumerAwareRebalanceListener` 상속 받아서 사용하면 된다.
+<br/>
+우리 어플리케이션에서는 Spring Kaka에서 잘 감싸서 준 `ConsumerAwareRebalanceListener` 상속 받아서 사용하면 된다.  
+
 
 ```java
 @Component
@@ -114,7 +117,7 @@ public class MyListener implements ConsumerAwareRebalanceListener {
 `consumer` 에는 `Consumer`에  여러 정보들을 볼 수 있다.  
 `partitions` 파라미터로 현재 할당 된 목록을 인자로 준다.  
 
-![Untitled](TIL%209ed8da153fae44fea5d41800018a5caf/Untitled.png)
+![Untitled](./2022-05-17/Untitled.png)
 
 ### 느낀점
 
@@ -122,7 +125,7 @@ public class MyListener implements ConsumerAwareRebalanceListener {
 
  
 
-![Untitled](TIL%209ed8da153fae44fea5d41800018a5caf/Untitled%201.png)
+![Untitled](./2022-05-17/Untitled%201.png)
 
 참고  
 [https://developer.confluent.io/learn-kafka/apache-kafka/partitions/](https://developer.confluent.io/learn-kafka/apache-kafka/partitions/)  

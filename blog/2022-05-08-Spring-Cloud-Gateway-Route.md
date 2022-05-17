@@ -7,14 +7,11 @@ tags: [SGC, Spring Cloud Gateway, Route]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-모든 소스는 [이곳](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway)에서 확인 가능합니다.
-
-Spring Gateway Route 설정 맛보기
-<!--truncate-->
-
+모든 소스는 [이곳](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway)에서 확인 가능합니다:)
 
 ## Spring Gateway Route
 Spring gateway을 사용할 때 일반적으로 2가지 방식으로 route 설정을 할 수 있다.
+<!--truncate-->
 
 ### Yaml
 
