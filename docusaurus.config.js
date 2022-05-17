@@ -21,7 +21,7 @@ const config = {
       async: true,
     },
     {
-      src: "/js/googleAnalytics.js",
+      src: "js/googleAnalytics.js",
       async: true,
     },
   ],
