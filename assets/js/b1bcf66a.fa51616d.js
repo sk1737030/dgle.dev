@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2463],{6148:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","name":"Hibernate","count":1,"permalink":"/tags/hibernate"}')}}]);
