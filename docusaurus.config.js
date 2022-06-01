@@ -53,7 +53,7 @@ const config = {
     ({
       algolia: {
         appId: 'TJ88U6GSXN',
-        apiKey: 'ed8bbc4f9cc50bea05ee0754f805bf58',
+        apiKey: '46c76c9ca82c5d107ae387826d1a3606',
         indexName: 'test',
         contextualSearch: true
       },
