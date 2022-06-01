@@ -3,7 +3,7 @@ title: Spring Cloud Gateway Route 설정해보기
 description: 스프링 게이트웨이 Route 까보기
 slug: gateway
 authors: dongle  
-tags: [SGC, Spring Cloud Gateway, Route]
+tags: [SCG, Spring Cloud Gateway, Route]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
