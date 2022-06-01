@@ -95,7 +95,7 @@
             <name>Dongle</name>
             <uri>https://github.com/sk1737030</uri>
         </author>
-        <category label="SGC" term="SGC"/>
+        <category label="SCG" term="SCG"/>
         <category label="Spring Cloud Gateway" term="Spring Cloud Gateway"/>
         <category label="Route" term="Route"/>
     </entry>
