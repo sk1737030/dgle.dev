@@ -54,7 +54,8 @@ const config = {
       algolia: {
         appId: 'TJ88U6GSXN',
         apiKey: 'ed8bbc4f9cc50bea05ee0754f805bf58',
-        indexName: 'dgle.dev',
+        indexName: 'test',
+        contextualSearch: true
       },
       navbar: {
         title: 'Dongle',
