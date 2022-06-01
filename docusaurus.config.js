@@ -51,6 +51,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'TJ88U6GSXN',
+        // Public API key: it is safe to commit it
+        apiKey: 'ed8bbc4f9cc50bea05ee0754f805bf58',
+        indexName: 'dgle.dev',
+        searchPagePath: 'search',
+      },
       navbar: {
         title: 'Dongle',
         logo: {
