@@ -1,6 +1,6 @@
 {
     "index_name": "dgle.dev",
-    "start_urls": ["https://www.dgle.dev/"],
+    "start_urls": ["https://www.dgle.dev", "https://dgle.dev/"],
     "selectors": {
       "lvl0": "#content header h1",
       "lvl1": "#content article h1",
