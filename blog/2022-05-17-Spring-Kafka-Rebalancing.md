@@ -8,6 +8,11 @@ image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
+Kafka를 통해 메시지를 받는 애플리케이션을 구성할 때 프로덕션 환경에서는 고려해야 할 여러 상황이 있는데 지금 생각나는 대표적으로 메시지유실, 중복 메시지 Consume, 확장 가능한 key 정하기, 카프카 리밸런싱 등 카프카를 사용하는데 많은 힘듦이 많이 있는데, 카프카 리밸런싱 상황에서 우리의 애플리케이션이 당황하지 않고 처리를 잘 할 수 있는 방법을 소개해 보려고 한다.
+
+<!--truncate-->
+
+
 [모든 소스는 이곳에서](https://github.com/sk1737030/til/tree/master/kafka-repartitioning) 확인 가능합니다 :)
 
 ## 스프링 부트에서 Kafka Rebalancing 처리 해보기

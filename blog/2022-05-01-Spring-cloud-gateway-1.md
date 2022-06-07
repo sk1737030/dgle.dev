@@ -7,13 +7,15 @@ tags: [SCG, Spring Cloud Gateway, Rate Limiter]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+SCG와 함꼐 간단한 Api Limiter를 구현해보자! 1편
+<!--truncate-->
+
 [모든 소스](https://github.com/sk1737030/til/tree/master/./2022-05-01/spring-cloud-gateway-late-limiter)는 요기서 확인가능합니다. :)  
 
 # Spring Cloud Gateway를 사용해서 API Limiter 구현을 해보자! 1편
 ## Api Limitier가 필요한 이유?
 
 limiter는 왜 필요할까를 먼저 생각해보면 다양한 이유가 있겠지만, 정말 간단하게 생각해보면 10초 걸리는 헤비한 api가 있을 때 client들이 짧은 시간에 API를 무분별하게 요청하게 되면 우리의 서버는 ~~끔찍한 결말~~을 맞게 될 것이다.
-<!--truncate-->
 저런 단순한 이유말고도 사용자별 차등(A 사용자는 초당 3번 요청, B 사용자는 초당 30번 요청)을 줄 수도 있고 등등 여러 가지 이점이 생긴다. ~~그러므로 정말 꼭 하나쯤은 이참에 장만하시는 게~~
 
 여러 다른 방법으로도 api limiter를 apllicaiton 단에서 구현할 수 있겠지만,  빠르고 정확하고 serializable하게  Api Limiter를 구현하는 건 정말 하나부터 열까지 생각해야 할 게 많고 **너무 어렵다**(~~나에게는~~). 

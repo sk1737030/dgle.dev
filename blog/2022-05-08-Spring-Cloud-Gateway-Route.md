@@ -7,11 +7,13 @@ tags: [SCG, Spring Cloud Gateway, Route]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+Spring gateway을 사용할 때 일반적으로 2가지 방식으로 route 설정을 할 수 있는데 어떤게 더 좋을까?
+<!--truncate-->
 모든 소스는 [이곳](https://github.com/sk1737030/til/tree/master/spring-cloud-gateway)에서 확인 가능합니다:)
 
 ## Spring Gateway Route
 Spring gateway을 사용할 때 일반적으로 2가지 방식으로 route 설정을 할 수 있다.
-<!--truncate-->
+
 
 ### Yaml
 
@@ -297,7 +299,10 @@ public class GatewayAutoConfiguration {
 
 ![Untitled](2022-05-08/Untitled%206.png)
 
-개인적으로는 yaml으로 설정하기보다는 Java Config로 설정하는 게 좋다고 봅니다. Yaml 설정으로는 확실히 편한 반면에, IDE의 도움을 받기 힘들고, 오타, yaml 라인이 다른 경우나 yaml 문법 에러 발생 등 정말 누구나 할 수 있는 실수인데, 만약 인지를 못하고 Product로 배포가 되면 장애가 발생합니다. 또한 게이트웨이다보 니 게이트웨이 뒤로 흐르는 모든 application들이 흐를 수 없게 되어 치명적인 장애가 발생할 수 있으니 Production 환경에서는 Java Config로 설정을 하는 걸 추천드립니다.
+### 결론  
+개인적으로는 yaml으로 설정하기보다는 **Java Config**로 설정하는 게 좋다고 봅니다.  
+Yaml 설정하면 간단하게 설정 할 수 있는 반면에, IDE의 도움을 받기 힘들고, 오타, yaml 라인이 다른 경우나 yaml 문법 에러 발생 등 정말 누구나 할 수 있는 실수인데, 만약 인지를 못하고 Product로 배포가 되면 장애가 발생합니다.  
+또한 게이트웨이다보 니 게이트웨이 뒤로 흐르는 모든 application들이 흐를 수 없게 되어 치명적인 장애가 발생할 수 있으니 Production 환경에서는 Java Config로 설정을 하는 걸 추천드립니다.  
 
 ### 후기  
 요즘 내부 구현을 많이 까 보면서, 내가 필요한 부분들을 따로 빼서 커스텀해서 쓰는 일이 몇 번 하다보니, 지금도 마찬가지지만 예전에는 진짜 막 썼었구나라고 다시금 많이 느끼고 그러면서 요즘  스프링과 1cm 정도 거리가 가까워졌다는 걸 느끼면서 ~~물론 그러면서 머리가 빠진...~~ 개인적으로 **성장**하고 있는 걸 많이 느끼고 있다.

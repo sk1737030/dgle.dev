@@ -7,13 +7,14 @@ tags: [SCG, Spring Cloud Gateway, Rate Limiter]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+Rate Limiter를 만들어보자! 2편
+<!--truncate-->
+
 [모든 소스](https://github.com/sk1737030/til/tree/master/./2022-05-01/spring-cloud-gateway-late-limiter)는 요기서 확인가능합니다. :)  
 
 # Spring Cloud Gateway를 사용해서 API Limiter 구현을 해보자! 2편
 
 앞서 1편에서 보았던 기본도 잘 쓸 수 있으나, 조금 더 나가서 ~~아구몬이 진화해서 그레이몬이 되듯이~~ Custom을 조금만 더 해주면 나름 괜찮은 RateLimiter가 될 수 있다. 
-
-<!--truncate-->
 
 ## Custom Redis limiter
 앞에서 사용했던 Default Redis Limiter는 아래 요구사항을 구현하기가 힘든데

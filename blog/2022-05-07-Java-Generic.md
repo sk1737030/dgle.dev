@@ -7,11 +7,13 @@ tags: [Java]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+제네릭을 사용하는데, 헷갈려서 다시 공부 할 겸 정리
+<!--truncate-->
+
 모든 소스는 [이곳에서](https://github.com/sk1737030/til/tree/master/til-generic/src) 확인 가능 합니다!
 
 ## Generic 제네릭 지네릭 줴네릭 
 
-제네릭을 사용하는데, 헷갈려서 다시 공부 할 겸 정리
 <!--truncate-->
 
 ### 제네릭이란???

@@ -8,8 +8,10 @@ image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
+예전에 한 번 읽었던 RealMysql를 다시금 읽으면서 정리하는 Transaction Isolation!
+<!--truncate-->
+
 # Transaction Isolation Level
-예전에 한 번 읽었던 RealMysql를 다시금 읽으면서 정리하는 Transaction Isolation  
 
 ### ACID
 ACID는 데이터베이스 내에서 일어나는 하나의 트랜잭션(transaction)의 안전성을 보장하기 위해 필요하다.
@@ -21,7 +23,6 @@ ACID는 데이터베이스 내에서 일어나는 하나의 트랜잭션(transac
 :::note동시성
 ACID를 높이면 높일 수록 동시성이 떨어진다, 
 :::note
-<!--truncate-->
 
 ### Read Uncommitted (Dirty Read)
 
