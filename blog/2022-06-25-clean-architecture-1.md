@@ -1,5 +1,5 @@
 ---
-title: 클린 아키텍처 정리 - 1
+title: 만들면서 배우는 클린 아키텍처 정리 - 1
 description: Clean Architecture Study - 1
 slug: clean-arch-1
 authors: dongle  
@@ -7,7 +7,7 @@ tags: [Spring Boot, Clean Architecture, Book ]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-클린 아키텍처를 읽고 공부한 내용을 정리. - 1
+만들면서 배는 클린 아키텍처를 읽고 공부한 내용을 정리. - 1
 <!--truncate-->
 
 모든 소스는 [이곳에](https://github.com/sk1737030/til/tree/master/clean-architecture) 있습니다:)
