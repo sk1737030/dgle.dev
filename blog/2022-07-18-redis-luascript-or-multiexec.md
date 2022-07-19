@@ -7,12 +7,19 @@ tags: [Redis, Luascript, transaction]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
+Redis에서 원자성을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
+<!--truncate-->
 
-# Redis에서 Luascirpt와 Multi WATCH Exec 뭘 써야할까?
+
+# Redis에서 원자성을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
+
 ## Multi와  exec를 사용하면
 
-Multi와 exec는 레디스에서 트랜잭션을 사용하겠다는 명령어인데 일반적인 RDB와 다르게 롤백기능이없다. (롤백기능이 없는 이유는 단순성과 성능에 상당한 영향을 미치기 때문에 없다.)  
-그냥 트랜잭션으로 묶인 명령어들이 순서대로 같이 큐에 담기게된다. 만약 큐에 쌓인 명령어가 중간에 실패하는 일이 생기면 그 부분만 skip하고 다음부분이 연속적으로 실행되게된다. 
+Multi와 exec는 레디스에서 트랜잭션을 사용하겠다는 명령어인데 일반적인 RDB와 다르게 롤백기능이없다. (롤백기능이 없는 이유는 단순성과 성능에 상당한 영향을 미치기 때문에 RDB와 다르게 없다고한다.)  
+그러면 레디스는 어떻게 트랜잭션을 바라볼까? Multi로 선언하면 multi안에 명령어들이 묶여 순서대로 같이 큐에 담기게된다. 그리고 EXEC를 만나는 순간 큐에 담긴 명령어들이 순서대로 한 오퍼레이션에 묶여 실행이되고  
+만약 큐에 쌓인 명령어가 중간에 실패하는 일이 생기면 실패한 부분만 skip하고 다음부분이 연속적으로 실행되게된다. 
+
+
 
 ```java
 > MULTI
