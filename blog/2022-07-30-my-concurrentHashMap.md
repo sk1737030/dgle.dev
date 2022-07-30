@@ -7,13 +7,14 @@ tags: [Java, Map, ConcurrentHashMap]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-모든 소스코드는 [이곳](https://github.com/sk1737030/til/tree/master/simple-concurrenthashmap)에서 확인 가능합니다!
-
-
-# 간단하게 만들어보자 ConcurrentHashMap
-동시성 문제 및 일관성을 위해 Key Value 구조로 사용할 때 가장 쉽게 사용하는 것이 `CoucurrentHashMap` 이였지만 부끄럽게도 항상 내부구조를 보고 이렇게 동시성을 보장하는 거구나라고 생각만 하고 매번 넘겼었는데 이번 기회에 정리하고 한 번 슥-삭 만들어 보려고 합니다. 그래서 결정한 제목은 간단하게 만들어보지 `ConcurrentHashMap`
+ConcurrentHashMap 간단하게 만들어보자
 
 <!--truncate-->
+모든 소스코드는 [이곳](https://github.com/sk1737030/til/tree/master/simple-concurrenthashmap)에서 확인 가능합니다!  
+
+# ConcurrentHashMap 간단하게 만들어보자
+동시성 문제 및 일관성을 위해 Key Value 구조로 사용할 때 가장 쉽게 사용하는 것이 `CoucurrentHashMap` 이였지만 부끄럽게도 항상 내부구조를 보고 이렇게 동시성을 보장하는 거구나라고 생각만 하고 매번 넘겼었는데 이번 기회에 정리하고 한 번 슥-삭 만들어 보려고 합니다. 그래서 결정한 제목은 간단하게 `ConcurrentHashMap` 간단하게 만들어보자
+
 <br />
 
 ## ConcurrentHashMap
@@ -161,15 +162,19 @@ public interface ConcurrentMap<K,V> extends Map<K,V> {
 [https://velog.io/@sojukang/Random-대신-ThreadLocalRandom을-써야-하는-이유](https://velog.io/@sojukang/Random-%EB%8C%80%EC%8B%A0-ThreadLocalRandom%EC%9D%84-%EC%8D%A8%EC%95%BC-%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 :::note
 
-참고로 환경은 [m1book Pro](https://www.apple.com/kr/macbook-pro-14-and-16/specs/), 16GB에서 테스트 해보았습니다.  
-대략 10번 정도의 테스트 후에 나온 결과 값입니다.  
+<br />
 
+참고로 환경은 [m1book Pro](https://www.apple.com/kr/macbook-pro-14-and-16/specs/), 16GB에서 테스트 해보았습니다.  
+
+대략 10번 정도의 테스트 후에 나온 결과 값입니다.  
 ```java
 hashTableAvgTime = 1228
 concurrentHashMapAvgTime = 317
 ```
 
-확실하게, 메소드 레벨에서 락을 거는 방법으로 put을 처리하는 `hashtable`과 달리 `ConcurrentHashMap`은 버킷당으로 lock을 걸고 cas 알고리즘을 사용하는등을 통한 여러 기법들로 성능상 상승이 나타난 걸로 보입니다.
+<br />
+
+확실히, 메소드 레벨에서 락을 거는 방법으로 put을 처리하는 `hashtable`과 달리 `ConcurrentHashMap`은 버킷당으로 lock을 걸고 cas 알고리즘을 사용하는등을 통한 여러 기법들로 성능상 상승이 나타난 걸로 보입니다.
 
 길었는데 만들어보는 건 다음 2편에서:)
  

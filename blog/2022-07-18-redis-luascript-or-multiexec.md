@@ -1,5 +1,5 @@
 ---
-title: 레디스 원자성을 위한 multi 와 luascript의 차이
+title: 레디스 Atomic Operation위해 multi 와 luascript의 차이
 description: What is difference Between Redis luascript and multi exec 
 slug: redis-multi-lua
 authors: dongle  
@@ -7,11 +7,11 @@ tags: [Redis, Luascript, transaction]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
-Redis에서 원자성을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
+Redis에서 Atomic Operation을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
 <!--truncate-->
 
 
-# Redis에서 원자성을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
+# Redis에서 Atomic Operation을 위해 Luascirpt와 Multi Exec 중 뭘 써야할까?
 
 ## Multi와  exec를 사용하면
 
