@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2775],{1185:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","name":"growup-together","count":1,"permalink":"/tags/growup-together"}')}}]);
