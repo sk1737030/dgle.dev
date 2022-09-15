@@ -69,11 +69,13 @@ const config = {
             label: 'TIL',
             position: 'left',
           },
+          { to: "/archive", label: "Archive", position: "left" },
           {
             href: 'https://github.com/sk1737030',
             label: 'GitHub',
             position: 'right',
           },
+
         ],
       },
       footer: {
