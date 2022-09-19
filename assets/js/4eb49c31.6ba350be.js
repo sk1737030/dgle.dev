@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5968],{6319:a=>{a.exports=JSON.parse('{"label":"Spring Kafka","permalink":"/tags/spring-kafka","allTagsPath":"/tags","count":1}')}}]);

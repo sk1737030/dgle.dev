@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[28],{424:e=>{e.exports=JSON.parse('{"label":"Clean Architecture","permalink":"/tags/clean-architecture","allTagsPath":"/tags","count":2}')}}]);

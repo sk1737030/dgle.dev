@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6376],{1013:e=>{e.exports=JSON.parse('{"label":"Spring Cloud Gateway","permalink":"/tags/spring-cloud-gateway","allTagsPath":"/tags","count":3}')}}]);

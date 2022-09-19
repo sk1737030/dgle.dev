@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9120],{8727:s=>{s.exports=JSON.parse('{"label":"Luascript","permalink":"/tags/luascript","allTagsPath":"/tags","count":1}')}}]);
