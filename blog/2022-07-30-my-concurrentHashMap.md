@@ -68,12 +68,29 @@ public interface ConcurrentMap<K,V> extends Map<K,V> {
     final V putVal(K key, V value, boolean onlyIfAbsent) {
     	int hash = spread(key.hashCode());
     ...
-    	else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
-    	      if (casTabAt(tab, i, null, new Node<K,V>(hash, key, value)))
+    	else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {           --1
+    	      if (casTabAt(tab, i, null, new Node<K,V>(hash, key, value))) --2
     	          break;                   // no lock when adding to empty bin
     	  }
     ...
     ```
+1. 새로운 Node를 삽입하기 위해, `tabAt()`을 통해 해당 bucket을 가져오고 `bucket == null`로 비어 있는지 확인한다.
+2. bucket이 비어 있을 경우 casTabAt을 통해 node를 새로 생성하는데 생성에 실패시에 다시 재시도 한다.
+
+```java
+static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i) {
+        return (Node<K,V>)U.getObjectAcquire(tab, ((long)i << ASHIFT) + ABASE);
+}
+
+static final <K,V> boolean casTabAt(Node<K,V>[] tab, int i,
+                                        Node<K,V> c, Node<K,V> v) {
+    return U.compareAndSetObject(tab, ((long)i << ASHIFT) + ABASE, c, v);
+}
+
+private static final Unsafe U = Unsafe.getUnsafe();
+```
+
+- [Unsafe](https://rangken.github.io/blog/2015/sun.misc.unSafe/) 메모리 접근에 관련된 함수
 
 <br />
 
@@ -107,7 +124,7 @@ public interface ConcurrentMap<K,V> extends Map<K,V> {
     	...
     ```
     
-<br / >
+<br />
 
 ## 간단한 성능테스트
 
