@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[4955],{3527:s=>{s.exports=JSON.parse('{"label":"ddd-start","permalink":"/tags/ddd-start","allTagsPath":"/tags","count":1}')}}]);
