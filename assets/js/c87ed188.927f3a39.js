@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2686],{2830:e=>{e.exports=JSON.parse('{"label":"programmers-brain","permalink":"/tags/programmers-brain","allTagsPath":"/tags","count":1}')}}]);
