@@ -4,10 +4,20 @@
         <title>Dongle Blog</title>
         <link>https://dgle.dev/</link>
         <description>Dongle Blog</description>
-        <lastBuildDate>Sat, 25 Mar 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Apr 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Spring Boot Batch 따라가보기 - 1]]></title>
+            <link>https://dgle.dev/spring-boot-batch-1</link>
+            <guid>spring-boot-batch-1</guid>
+            <pubDate>Thu, 27 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Follow up Spring Boot Batch]]></description>
+            <content:encoded><![CDATA[<p>코린이의 Spring Boot Batch 파헤쳐보기</p><h1>TIL</h1><h1>스프링 배치</h1><h2 class="anchor anchorWithStickyNavbar_LWe7" id="배치-사용-이유">배치 사용 이유<a class="hash-link" href="#배치-사용-이유" title="Direct link to heading">​</a></h2><p>대량의 레코드의 로깅 분석, 트랜잭션 관리, 잡 프로세스 관리, 잡 재시작, skip, 리소스 관리등 사용성좋은 기능들을 제공해준다. 가장 큰 이점으로는 여러 data formatter를 지원하여 Read, Write 를 도와줘서 복잡한 코드를 사용하지 않아도 사용하기가 쉽다.</p><p>또한 중요한 다른 이점으로 청크 기반의 프로세싱을 지원하며, 배치 잡 상태를 관리해주는데, 중단된 실패한 잡의 재시작, 여러 이유로 skip되버린  records의 재시작, 또는 잡의 진행상태 들을 관리해주어 유지보수관리에 용이하다.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="배치-아키텍처">배치 아키텍처<a class="hash-link" href="#배치-아키텍처" title="Direct link to heading">​</a></h2><h2 class="anchor anchorWithStickyNavbar_LWe7" id="job-시작-flow">Job 시작 flow<a class="hash-link" href="#job-시작-flow" title="Direct link to heading">​</a></h2><p><img loading="lazy" alt="batch-job-start-flow" src="/assets/images/Untitled-8f9b75217ec848de0ad7318844ac96ec.png" width="6488" height="4284" class="img_ev3q"></p><ol><li>마지막에 실행된 job을 조회</li><li>없으면 새로운 job을 등록</li><li>있을 경우 해당하는 job을 조회한다.<ul><li>여러가지 상태들을 확인한다.<ul><li>ex) step 들의 상태가 running 또는 <em>STOPPING 일시 throw</em></li></ul></li></ul></li></ol><h3 class="anchor anchorWithStickyNavbar_LWe7" id="배치-비지니스-로직-flow">배치 비지니스 로직 flow<a class="hash-link" href="#배치-비지니스-로직-flow" title="Direct link to heading">​</a></h3><p><img loading="lazy" alt="spring-boot-batch-business-flow" src="/assets/images/Untitled-8f9b75217ec848de0ad7318844ac96ec.png" width="6488" height="4284" class="img_ev3q"></p><p><strong>JobInstance</strong></p><p>JobInstace는 논리적으로 실행을 나타낸다. JobInstae는 Job 이름과 인수로 식별된다. Job명이 동일하다면 동일한 JobInstance로 생각을하여, Job이 에러 등으로 처리가 도중에 중단하고 있었을 경우 재실행을 보장 할 수 있고, 처리의 도중부터 실행된다.</p><p><strong>JobExecution</strong></p><p>JobExecution은 작업의 실행을 나타낸다. JobInstance 와 1:N의 관계를 가진다.</p><p>ExecutionContext를 가지고있는데 Spring Batch가 여러 진행 상황과 메타데이터를 체크하기위해 가지기도 하지만 사용자가 공유를위해 사용할 수 도 있다.</p><p><strong>StepExecution</strong></p><p>StepExecution은 Step의 실행을 나타낸다.&nbsp;JobExecution과 StepExecution은 1:N의 관계를 가진다.</p><p>JobExecution과 마찬가지로 ExecutionContext를 가지는데, 복수의 step간의 공유를 위해서 사용하지 않을려면 StepExecution을 사용 할 수 있다.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="참고">참고<a class="hash-link" href="#참고" title="Direct link to heading">​</a></h2><p><a href="https://medium.com/dreamifly/spring-batch-tutorial-batch-processing-made-easy-with-spring-3219b4de052" target="_blank" rel="noopener noreferrer">Spring Batch Tutorial: Batch Processing Made Easy with Spring | by Jalal Nasser | DreamiFly | Medium</a>s://<a href="http://www.baeldung.com/rest-assured-tutorial" target="_blank" rel="noopener noreferrer">www.baeldung.com/rest-assured-tutorial</a>)</p>]]></content:encoded>
+            <category>SpringBoot</category>
+            <category>SpringBootBatch</category>
+        </item>
         <item>
             <title><![CDATA[RestAssured]]></title>
             <link>https://dgle.dev/rest-assured</link>
