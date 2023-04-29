@@ -1,8 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 
 function Comment() {
-    const {isDarkTheme} = useThemeContext();
-    const utterancesTheme = isDarkTheme ? 'github-dark' : 'github-light';
+    // const {isDarkTheme} = useThemeContext();
+    // const utterancesTheme = isDarkTheme ? 'github-dark' : 'github-light';
 
     const containerRef = useRef(null);
     useEffect(() => {
@@ -12,7 +12,7 @@ function Comment() {
             script.setAttribute('repo', 'sk1737030/dgle.dev');
             script.setAttribute('issue-term', 'title');
             script.setAttribute('label', 'comment');
-            script.setAttribute('theme', utterancesTheme);
+            // script.setAttribute('theme', utterancesTheme);
             script.crossOrigin = 'anonymous';
             script.async = true;
             containerRef.current.appendChild(script);
@@ -25,8 +25,8 @@ function Comment() {
             utterancesEl.contentWindow.postMessage(message, 'https://utteranc.es');
         };
 
-        utterancesEl ? postThemeMessage() : createUtterancesEl();
-    }, [utterancesEl]);
+        createUtterancesEl();
+    }, [/*utterancesEl*/]);
     return <div ref={containerRef}/>;
 }
 

@@ -6,7 +6,7 @@ export default function BlogPostPageWrapper(props) {
   return (
     <>
       <BlogPostPage {...props} />
-      {<Comment/>}
+      <Comment/>
     </>
   );
 }
