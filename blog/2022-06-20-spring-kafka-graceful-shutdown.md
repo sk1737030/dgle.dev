@@ -157,7 +157,7 @@ Offset 확인
 
 Timeout 이내에 메시지는 잘 `Graceful`하게 처리한다. 그러나 만약 timeout 내에 처리를 못 한다면 메시지를 중복으로 처리하는 상황이 나타날 수 있으니, 적절한 방어 로직과 수동 commit으로 풀어서 처리를하거나 timeout을 알맞게 설정해야 할 거 같다.
 
-### 참고  
+# 참고  
 [https://docs.spring.io/spring-kafka/docs/2.5.17.RELEASE/reference/html/](https://docs.spring.io/spring-kafka/docs/2.5.17.RELEASE/reference/html/)  
 [https://bravenamme.github.io/2020/10/06/graceful-shutdown/](https://bravenamme.github.io/2020/10/06/graceful-shutdown/)  
 [https://docs.confluent.io/confluent-cli/current/overview.html](https://docs.confluent.io/confluent-cli/current/overview.html)  

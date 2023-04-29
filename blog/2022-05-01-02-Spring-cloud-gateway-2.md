@@ -288,7 +288,7 @@ Gateway에서 Request body를 읽어서 무언가를 처리 한 후에 다음 Fi
 다시 뒤에서 body를 못 읽는다는 문제가 있다.  
 이 부분은 한 번 읽고 body를 캐싱 해서 다시 body를 넣어주는 추가 작업이 필요하다.
 
-### 참고
+# 참고
 
 [가상 면접 사례로 배우는 대규모 시스템 설계](http://www.yes24.com/Product/Goods/102819435)  
 [Spring Cloud gateway Docs](https://docs.spring.io/./2022-05-01/spring-cloud-gateway/docs/current/reference/html/)  

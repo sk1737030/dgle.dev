@@ -307,7 +307,7 @@ Yaml 설정하면 간단하게 설정 할 수 있는 반면에, IDE의 도움을
 ### 후기  
 요즘 내부 구현을 많이 까 보면서, 내가 필요한 부분들을 따로 빼서 커스텀해서 쓰는 일이 몇 번 하다보니, 지금도 마찬가지지만 예전에는 진짜 막 썼었구나라고 다시금 많이 느끼고 그러면서 요즘  스프링과 1cm 정도 거리가 가까워졌다는 걸 느끼면서 ~~물론 그러면서 머리가 빠진...~~ 개인적으로 **성장**하고 있는 걸 많이 느끼고 있다.
 
-참고  
+# 참고  
 [https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)  
 [https://blog.jungbin.kim/spring/2021/02/27/spring-cloud-gateway-route-locator.html](https://blog.jungbin.kim/spring/2021/02/27/spring-cloud-gateway-route-locator.html)  
 [https://www.baeldung.com/spring-cloud-gateway#spring-cloud-discoveryclient-support](https://www.baeldung.com/spring-cloud-gateway#spring-cloud-discoveryclient-support)  

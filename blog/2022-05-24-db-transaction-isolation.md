@@ -77,7 +77,7 @@ ACID를 높이면 높일 수록 동시성이 떨어진다,
 - 읽기 작업도 공유 잠금을 획득 해야 하며 동시에 다른 트랜잭션은 그러한 레코드를 변경하지 못한다.
 - 한 트랜잭션에서 읽고 쓰는 레코드를 다른 트랜잭션에서는 접근 불가하다
 
-참고  
+# 참고  
 [https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/](https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/) - gap lock, record lock 등 격리 레벨별 설명이 자세하다.  
 [https://www.cyber.pe.kr/2016/11/mysql-innodb-type.html](https://www.cyber.pe.kr/2016/11/mysql-innodb-type.html)  
 [RealMysql](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791158392703)

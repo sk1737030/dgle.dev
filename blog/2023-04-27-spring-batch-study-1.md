@@ -52,7 +52,7 @@ ExecutionContext를 가지고있는데 Spring Batch가 여러 진행 상황과 �
 StepExecution은 Step의 실행을 나타낸다. JobExecution과 StepExecution은 1:N의 관계를 가진다.
 JobExecution과 마찬가지로 ExecutionContext를 가지는데, 복수의 step간의 공유를 위해서 사용하지 않을려면 StepExecution을 사용 할 수 있다.
 
-## 참고
+# 참고
 
 [Spring Batch Tutorial: Batch Processing Made Easy with Spring | by Jalal Nasser | DreamiFly | Medium](https://medium.com/dreamifly/spring-batch-tutorial-batch-processing-made-easy-with-spring-3219b4de052)  
 https://www.baeldung.com/rest-assured-tutorial)

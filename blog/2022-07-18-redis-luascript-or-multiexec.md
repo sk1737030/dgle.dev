@@ -122,7 +122,7 @@ return result "
 
 <br />
 
-참고   
+# 참고   
 [https://redis.io/docs/manual/programmability/eval-intro/](https://redis.io/docs/manual/programmability/eval-intro/)  
 [https://stackoverflow.com/questions/62970603/lua-scripts-vs-multi-exec-in-redis](https://stackoverflow.com/questions/62970603/lua-scripts-vs-multi-exec-in-redis)   
 [redisTransaction](https://redis.io/docs/manual/transactions/)  

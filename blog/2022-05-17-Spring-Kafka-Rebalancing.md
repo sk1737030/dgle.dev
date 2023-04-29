@@ -132,7 +132,7 @@ public class MyListener implements ConsumerAwareRebalanceListener {
 
 ![Untitled](./2022-05-17/Untitled%201.png)
 
-참고  
+# 참고  
 [https://developer.confluent.io/learn-kafka/apache-kafka/partitions/](https://developer.confluent.io/learn-kafka/apache-kafka/partitions/)  
 [https://www.popit.kr/kafka-consumer-group/](https://www.popit.kr/kafka-consumer-group/)  
 [group id와 consume id 차이](https://stackoverflow.com/questions/34550873/difference-between-groupid-and-consumerid-in-kafka-consumer)  

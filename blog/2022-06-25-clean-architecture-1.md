@@ -122,6 +122,6 @@ Create, Update, Delete … naming으로 역할을 만들기 전에 한 번더 �
 :::note
 
 
-참고  
+# 참고  
 [만들면서 배우는 클린 아키텍처](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791158392758&orderClick=LAG&Kc=)  
 [로버트마르틴형의원문](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) → [한글번역](https://blog.coderifleman.com/2017/12/18/the-clean-architecture/)  
