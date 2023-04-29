@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
 import OriginalBlogPostItem from "@theme-original/BlogPostItem";
-import { useColorMode } from "@docusaurus/theme-common";
+import {useColorMode} from "@docusaurus/theme-common";
+import {useEffect, useRef} from "react";
 
 const utterancesSelector = "iframe.utterances-frame";
 
 function BlogPostItem(props) {
-  const { isDarkTheme } = useColorMode();
+  const {isDarkTheme} = useColorMode();
   const utterancesTheme = isDarkTheme ? "github-dark" : "github-light";
   const containerRef = useRef(null);
 
@@ -43,7 +43,7 @@ function BlogPostItem(props) {
   return (
     <>
       <OriginalBlogPostItem {...props} />
-      {props.isBlogPostPage && <div ref={containerRef} />}
+      {props.isBlogPostPage && <div ref={containerRef}/>}
     </>
   );
 }
