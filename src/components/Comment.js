@@ -1,33 +1,46 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from "react";
+import {useColorMode} from "@docusaurus/theme-common";
 
 function Comment() {
-    // const {isDarkTheme} = useThemeContext();
-    // const utterancesTheme = isDarkTheme ? 'github-dark' : 'github-light';
+  const containerRef = useRef(null);
+  const utterancesRef = useRef(null);
 
-    const containerRef = useRef(null);
-    useEffect(() => {
-        const createUtterancesEl = () => {
-            const script = document.createElement('script');
-            script.src = 'https://utteranc.es/client.js';
-            script.setAttribute('repo', 'sk1737030/dgle.dev');
-            script.setAttribute('issue-term', 'title');
-            script.setAttribute('label', 'comment');
-            // script.setAttribute('theme', utterancesTheme);
-            script.crossOrigin = 'anonymous';
-            script.async = true;
-            containerRef.current.appendChild(script);
-        };
-        const postThemeMessage = () => {
-            const message = {
-                type: 'set-theme',
-                theme: utterancesTheme,
-            };
-            utterancesEl.contentWindow.postMessage(message, 'https://utteranc.es');
-        };
+  const {colorMode} = useColorMode();
+  const utterancesTheme = colorMode === "dark" ? "github-dark" : "github-light";
 
-        createUtterancesEl();
-    }, [/*utterancesEl*/]);
-    return <div ref={containerRef}/>;
+  useEffect(() => {
+    const createUtterancesEl = () => {
+      const script = document.createElement("script");
+      script.src = "https://utteranc.es/client.js";
+      script.setAttribute("repo", "sk1737030/dgle.dev");
+      script.setAttribute("issue-term", "title");
+      script.setAttribute("label", "comment");
+      script.setAttribute("theme", utterancesTheme);
+      script.crossOrigin = "anonymous";
+      script.async = true;
+      script.onload = () => {
+        utterancesRef.current = document.querySelector(".utterances-frame");
+      };
+
+      containerRef.current.appendChild(script);
+    };
+    createUtterancesEl();
+  }, []);
+
+  useEffect(() => {
+    if (!utterancesRef.current) return;
+    const message = {
+      type: "set-theme",
+      theme: utterancesTheme,
+    };
+
+    utterancesRef.current.contentWindow.postMessage(
+      message,
+      "https://utteranc.es"
+    );
+  }, [utterancesTheme]);
+
+  return <div ref={containerRef}/>;
 }
 
 export default Comment;

@@ -1503,7 +1503,7 @@
     "tslib" "^2.4.0"
     "utility-types" "^3.10.0"
 
-"@docusaurus/theme-common@2.4.0":
+"@docusaurus/theme-common@^2.4.0", "@docusaurus/theme-common@2.4.0":
   "integrity" "sha512-IkG/l5f/FLY6cBIxtPmFnxpuPzc5TupuqlOx+XDN+035MdQcAh8wHXXZJAkTeYDeZ3anIUSUIvWa7/nRKoQEfg=="
   "resolved" "https://registry.npmjs.org/@docusaurus/theme-common/-/theme-common-2.4.0.tgz"
   "version" "2.4.0"

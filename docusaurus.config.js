@@ -32,11 +32,11 @@ const config = {
         docs: false,
         blog: {
           showReadingTime: true,
-          routeBasePath: '/',
-           editUrl:
-            //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            'https://github.com/facebook/docusaurus/edit/main/website',
-        } ,
+          routeBasePath: '/'
+          /*editUrl:
+          //'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/facebook/docusaurus/edit/main/website'*/,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -49,7 +49,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       algolia: {
         appId: 'L7PLUQ38M6',
@@ -64,28 +64,27 @@ const config = {
           src: 'https://avatars.githubusercontent.com/u/28296218?s=400&u=4e1e0c55274f6595e4f2e0a6148c7e209c9e7541&v=4',
         },
         items: [
-          {
-            href: 'https://bit.ly/3sWvIA4',
-            label: 'TIL',
-            position: 'left',
-          },
-          { to: "/archive", label: "Archive", position: "left" },
+          {to: "/archive", label: "목록", position: "left"},
           {
             href: 'https://github.com/sk1737030',
             label: 'GitHub',
             position: 'right',
           },
-
+          {
+            href: 'https://bit.ly/3sWvIA4',
+            label: 'TIL',
+            position: 'right',
+          },
         ],
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} dongle, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Dongle😀`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: [ 'java', 'groovy' ]
+        additionalLanguages: ['java', 'groovy']
 
       },
     }),
