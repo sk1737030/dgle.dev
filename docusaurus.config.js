@@ -52,8 +52,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       algolia: {
-        appId: 'TJ88U6GSXN',
-        apiKey: '46c76c9ca82c5d107ae387826d1a3606',
+        appId: 'RE2DIMN6F3',
+        apiKey: '2d728f064fe0039cbd2ad41f0bcd37e9',
         indexName: 'test',
         contextualSearch: true
       },
