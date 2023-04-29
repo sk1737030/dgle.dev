@@ -54,7 +54,7 @@ const config = {
       algolia: {
         appId: 'RE2DIMN6F3',
         apiKey: '2d728f064fe0039cbd2ad41f0bcd37e9',
-        indexName: 'test',
+        indexName: 'blogSearch',
         contextualSearch: true
       },
       navbar: {
