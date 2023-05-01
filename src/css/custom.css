@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/@docsearch/css@3');
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -37,3 +39,5 @@
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+

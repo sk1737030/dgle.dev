@@ -21,6 +21,10 @@ const config = {
       async: true,
     },
     {
+    src: "https://cdn.jsdelivr.net/npm/@docsearch/js@3",
+      async: true,
+    },
+    {
       src: "js/googleAnalytics.js",
       async: true,
     },
